@@ -39,7 +39,9 @@ function renderGame() {
         cardsEl.textContent += cards[i] + " "
     }
     sumEl.textContent = "Sum: " + sum
-    if (sum <= 20) {
+    if (sum === "") {
+        message = "Want to play a round?"
+    } else if (sum <= 20) {
         message = "Do you want to draw a new card?"
     } else if (sum === 21) {
         message = "You've got Blackjack!"
@@ -61,11 +63,11 @@ function newCard() {
 }
 
 function endgame() {
-  cards = [];
-  sum = 0;
-  hasBlackJack = false;
-  isAlive = false;
-  message = "Want to play a round?";
-  renderGame();
+    cards = []
+    sum = ""
+    hasBlackJack = false
+    isAlive = false
+    message = "Want to play a round?"
+    renderGame()
 }
 
