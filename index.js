@@ -38,7 +38,6 @@ function renderGame() {
     for (let i = 0; i < cards.length; i++) {
         cardsEl.textContent += cards[i] + " "
     }
-    
     sumEl.textContent = "Sum: " + sum
     if (sum <= 20) {
         message = "Do you want to draw a new card?"
@@ -60,3 +59,13 @@ function newCard() {
         renderGame()        
     }
 }
+
+function endgame() {
+  cards = [];
+  sum = 0;
+  hasBlackJack = false;
+  isAlive = false;
+  message = "Want to play a round?";
+  renderGame();
+}
+
